@@ -8,6 +8,10 @@
 
 **Versión:** 1.1.0
 
+## Demo en línea
+
+[Ver Cocina Inteligente IoT](https://andreacarrilloop.github.io/Cocina-IOT/)
+
 ## Propósito
 
 Este **no es un proyecto orientado al desarrollo de software**. Es una representación académica y visual de un escenario de **redes e IoT aplicado a una cocina inteligente**.
