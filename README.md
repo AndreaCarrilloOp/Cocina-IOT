@@ -4,9 +4,9 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=000)
 ![IoT](https://img.shields.io/badge/IoT-Internet%20of%20Things-355C7D)
-![Redes](https://img.shields.io/badge/Enfoque-Redes%20y%20Topolog%C3%ADa-475569)
 
-**Versión:** 1.1.0
+**Versión:** 1.2.0  
+**Tipo:** demostración académica de redes e IoT  
 
 ## Demo en línea
 
@@ -50,24 +50,26 @@ También puede utilizar **Live Server** en Visual Studio Code.
 ## Estructura
 
 ```text
-Cocina-IoT/
+Cocina-IOT/
 ├── assets/
 │   ├── css/
 │   │   └── styles.css
-│   ├── js/
-│   │   └── app.js
-│   └── images/
-│       ├── sequences/
-│       │   ├── corriente/
-│       │   ├── gas/
-│       │   ├── humo/
-│       │   ├── proximidad/
-│       │   └── temperatura/
-│       ├── cover.webp
-│       ├── logo.png
-│       └── topology.webp
-├── index.html
-└── README.md
+│   ├── images/
+│   │   ├── sequences/
+│   │   │   ├── corriente/
+│   │   │   ├── gas/
+│   │   │   ├── humo/
+│   │   │   ├── proximidad/
+│   │   │   └── temperatura/
+│   │   ├── cover.webp
+│   │   ├── logo.png
+│   │   └── topology.webp
+│   └── js/
+│       ├── app.js
+│       └── views.js
+├── README.md
+└── index.html
+
 ```
 
 ---
