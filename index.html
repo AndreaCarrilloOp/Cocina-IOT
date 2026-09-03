@@ -3,122 +3,183 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Cocina Inteligente IoT: representación académica de sensores, flujo de datos y topología de red aplicada a una cocina.">
+    <meta
+        name="description"
+        content="Cocina Inteligente IoT: demostración académica de sensores, flujo de datos y topología de red aplicada a una cocina."
+    >
     <meta name="theme-color" content="#0b1f33">
     <title>Cocina Inteligente IoT</title>
 
     <link rel="icon" href="assets/images/logo.png" type="image/png">
     <link rel="preload" href="assets/images/cover.webp" as="image" type="image/webp">
     <link rel="stylesheet" href="assets/css/styles.css">
+
+    <script src="assets/js/views.js" defer></script>
     <script src="assets/js/app.js" defer></script>
 </head>
-<body>
+<body data-view-section="inicio">
     <div class="app-shell">
         <aside class="sidebar" aria-label="Navegación principal">
             <button class="brand" type="button" data-view="inicio" aria-label="Ir al inicio">
                 <span class="brand-mark" aria-hidden="true">
                     <img src="assets/images/logo.png" alt="">
                 </span>
+
                 <span class="brand-copy">
                     <strong>Cocina IoT</strong>
                     <small>Redes e IoT</small>
                 </span>
             </button>
 
-            <nav class="sensor-nav" aria-label="Sensores y arquitectura">
+            <nav class="primary-nav" aria-label="Sensores y arquitectura">
                 <button class="nav-item is-active" type="button" data-view="inicio" aria-pressed="true">
-                    <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 11.5 12 4l9 7.5v8a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg></span>
+                    <span class="nav-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M3 11.5 12 4l9 7.5v8a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>
+                        </svg>
+                    </span>
                     <span>Inicio</span>
                 </button>
 
                 <span class="nav-section-label" aria-hidden="true">Sensores</span>
 
                 <button class="nav-item" type="button" data-view="proximidad" aria-pressed="false">
-                    <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 12h4m8 0h4M7 8l3 4-3 4m10-8-3 4 3 4"/></svg></span>
+                    <span class="nav-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 12h4m8 0h4M7 8l3 4-3 4m10-8-3 4 3 4"/>
+                        </svg>
+                    </span>
                     <span>Proximidad</span>
                 </button>
+
                 <button class="nav-item" type="button" data-view="temperatura" aria-pressed="false">
-                    <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M10 14.8V5a2 2 0 1 1 4 0v9.8a4 4 0 1 1-4 0Z"/><path d="M12 17v-6"/></svg></span>
+                    <span class="nav-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M10 14.8V5a2 2 0 1 1 4 0v9.8a4 4 0 1 1-4 0Z"/>
+                            <path d="M12 17v-6"/>
+                        </svg>
+                    </span>
                     <span>Temperatura</span>
                 </button>
+
                 <button class="nav-item" type="button" data-view="corriente" aria-pressed="false">
-                    <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m13 2-7 11h6l-1 9 7-12h-6z"/></svg></span>
+                    <span class="nav-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="m13 2-7 11h6l-1 9 7-12h-6z"/>
+                        </svg>
+                    </span>
                     <span>Corriente</span>
                 </button>
+
                 <button class="nav-item" type="button" data-view="humo" aria-pressed="false">
-                    <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 19h10a4 4 0 0 0 1-7.9A6 6 0 0 0 6.6 9.4 4.8 4.8 0 0 0 7 19Z"/><path d="M9 7c0-2 2-2 2-4m3 4c0-2 2-2 2-4"/></svg></span>
+                    <span class="nav-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M7 19h10a4 4 0 0 0 1-7.9A6 6 0 0 0 6.6 9.4 4.8 4.8 0 0 0 7 19Z"/>
+                            <path d="M9 7c0-2 2-2 2-4m3 4c0-2 2-2 2-4"/>
+                        </svg>
+                    </span>
                     <span>Humo</span>
                 </button>
+
                 <button class="nav-item" type="button" data-view="gas" aria-pressed="false">
-                    <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3c1 4-3 5-3 9a3 3 0 0 0 6 0c0-1-.3-1.8-1-3 3 2 5 4 5 7a7 7 0 1 1-14 0c0-5 3-9 7-13Z"/></svg></span>
+                    <span class="nav-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 3c1 4-3 5-3 9a3 3 0 0 0 6 0c0-1-.3-1.8-1-3 3 2 5 4 5 7a7 7 0 1 1-14 0c0-5 3-9 7-13Z"/>
+                        </svg>
+                    </span>
                     <span>Gas</span>
                 </button>
 
                 <span class="nav-section-label nav-section-label--architecture" aria-hidden="true">Arquitectura</span>
 
                 <button class="nav-item" type="button" data-view="topologia" aria-pressed="false">
-                    <span class="nav-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="2"/><circle cx="5" cy="18" r="2"/><circle cx="19" cy="18" r="2"/><path d="M12 7v4M5 16v-3h14v3M5 13h14"/></svg></span>
+                    <span class="nav-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24">
+                            <circle cx="12" cy="5" r="2"/>
+                            <circle cx="5" cy="18" r="2"/>
+                            <circle cx="19" cy="18" r="2"/>
+                            <path d="M12 7v4M5 16v-3h14v3M5 13h14"/>
+                        </svg>
+                    </span>
                     <span>Topología</span>
                 </button>
             </nav>
-
-            <div class="sidebar-footer">
-                <span class="status-dot" aria-hidden="true"></span>
-                <span>Demostración académica</span>
-            </div>
         </aside>
 
         <main class="main-content">
             <header class="topbar">
                 <div class="page-heading">
-                    <p class="eyebrow" id="view-category">Sistema de cocina inteligente</p>
                     <h1 id="view-title">Vista general</h1>
                     <p id="view-description">Explore los sensores y la arquitectura de la solución IoT.</p>
                 </div>
-                <span class="view-badge" id="view-badge">Inicio</span>
             </header>
+
+            <nav class="sensor-tabs" id="sensor-tabs" aria-label="Seleccionar sensor" hidden>
+                <button class="sensor-tab" type="button" data-view="proximidad" aria-pressed="false">Proximidad</button>
+                <button class="sensor-tab" type="button" data-view="temperatura" aria-pressed="false">Temperatura</button>
+                <button class="sensor-tab" type="button" data-view="corriente" aria-pressed="false">Corriente</button>
+                <button class="sensor-tab" type="button" data-view="humo" aria-pressed="false">Humo</button>
+                <button class="sensor-tab" type="button" data-view="gas" aria-pressed="false">Gas</button>
+            </nav>
 
             <section class="workspace" aria-labelledby="view-title">
                 <div class="viewer" id="viewer" data-mode="static">
                     <div class="viewer-stage">
-                        <button class="sequence-side-button" id="previous-step" type="button" aria-label="Paso anterior">
-                            <span aria-hidden="true">‹</span>
-                        </button>
-
                         <article class="step-display">
                             <header class="step-display-header">
                                 <div class="step-heading-copy">
                                     <span class="step-kicker" id="step-kicker">Paso 1 de 5</span>
                                     <h2 class="step-title" id="step-title">Sistema en reposo</h2>
                                 </div>
-                                <div class="step-header-actions">
-                                    <span class="step-number" id="step-number" aria-hidden="true">1</span>
-                                    <button class="step-pause-button" id="toggle-sequence" type="button" aria-pressed="false" aria-label="Pausar secuencia">
+
+                                <div class="step-header-actions" aria-label="Controles de la secuencia">
+                                    <button class="sequence-control-button sequence-control-button--step" id="previous-step" type="button" aria-label="Paso anterior">
+                                        <span aria-hidden="true">←</span>
+                                        <span class="sequence-control-label">Anterior</span>
+                                    </button>
+
+                                    <button
+                                        class="sequence-control-button sequence-control-button--playback"
+                                        id="toggle-sequence"
+                                        type="button"
+                                        aria-pressed="false"
+                                        aria-label="Pausar secuencia"
+                                    >
                                         <span id="play-symbol" aria-hidden="true">⏸</span>
-                                        <span id="play-label">Pausar</span>
+                                        <span id="play-label">Pausar secuencia</span>
+                                    </button>
+
+                                    <button class="sequence-control-button sequence-control-button--step" id="next-step" type="button" aria-label="Paso siguiente">
+                                        <span class="sequence-control-label">Siguiente</span>
+                                        <span aria-hidden="true">→</span>
                                     </button>
                                 </div>
                             </header>
 
                             <div class="step-illustration">
-                                <img id="pantalla" class="viewer-image" src="assets/images/cover.webp" alt="Portada del proyecto Cocina Inteligente IoT" decoding="async">
+                                <img
+                                    id="viewer-image"
+                                    class="viewer-image"
+                                    src="assets/images/cover.webp"
+                                    alt="Portada del proyecto Cocina Inteligente IoT"
+                                    decoding="async"
+                                >
                                 <div class="image-loader" aria-hidden="true"></div>
                             </div>
 
-                            <footer class="step-display-footer" aria-live="polite">
+                            <div class="step-details" aria-live="polite">
                                 <p id="step-description">No se detecta movimiento en el área de cocina.</p>
                                 <span class="step-state" id="step-state" data-tone="normal">En espera</span>
-                            </footer>
+                            </div>
                         </article>
-
-                        <button class="sequence-side-button" id="next-step" type="button" aria-label="Paso siguiente">
-                            <span aria-hidden="true">›</span>
-                        </button>
                     </div>
 
                     <section class="sequence-panel" id="sequence-panel" aria-label="Progreso de la secuencia" hidden>
-                        <div class="step-progress" id="step-progress">
-                            <span class="progress-rail" aria-hidden="true"><span id="progress-fill"></span></span>
+                        <div class="step-progress">
+                            <span class="progress-rail" aria-hidden="true">
+                                <span id="progress-fill"></span>
+                            </span>
+
                             <button type="button" class="progress-step is-active" data-step="0" aria-label="Ir al paso 1">1</button>
                             <button type="button" class="progress-step" data-step="1" aria-label="Ir al paso 2">2</button>
                             <button type="button" class="progress-step" data-step="2" aria-label="Ir al paso 3">3</button>
@@ -130,11 +191,46 @@
             </section>
 
             <footer class="footer" aria-label="Créditos del proyecto">
-                <span>Proyecto académico · Cocina Inteligente IoT</span>
-                <span>Andrea Carrillo Oporto · Jerry Solera Celestino</span>
-                <span>© 2026 · Todos los derechos reservados</span>
+                Andrea Carrillo Oporto · Jerry Solera Celestino · © 2026
             </footer>
         </main>
     </div>
+
+    <nav class="mobile-bottom-nav" aria-label="Navegación principal móvil">
+        <div class="mobile-bottom-nav__inner">
+            <button class="mobile-nav-item is-active" type="button" data-section="inicio" aria-pressed="true">
+                <span class="mobile-nav-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 11.5 12 4l9 7.5v8a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>
+                    </svg>
+                </span>
+                <span>Inicio</span>
+            </button>
+
+            <button class="mobile-nav-item" type="button" data-section="sensores" aria-pressed="false">
+                <span class="mobile-nav-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="7" cy="8" r="2"/>
+                        <circle cx="17" cy="8" r="2"/>
+                        <circle cx="12" cy="16" r="2"/>
+                        <path d="M9 8h6M8.5 9.5l2.3 4.7m4.7-4.7-2.3 4.7"/>
+                    </svg>
+                </span>
+                <span>Sensores</span>
+            </button>
+
+            <button class="mobile-nav-item" type="button" data-section="topologia" aria-pressed="false">
+                <span class="mobile-nav-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24">
+                        <circle cx="12" cy="5" r="2"/>
+                        <circle cx="5" cy="18" r="2"/>
+                        <circle cx="19" cy="18" r="2"/>
+                        <path d="M12 7v4M5 16v-3h14v3M5 13h14"/>
+                    </svg>
+                </span>
+                <span>Topología</span>
+            </button>
+        </div>
+    </nav>
 </body>
 </html>
